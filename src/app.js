@@ -31,7 +31,7 @@ app.post("/add-visitor",(req,res) => {
         status:"Is Okay"
     });
 });
-app.get('/view-visitor/visitor_id',(req,res)=>{
+app.get('/view-visitor/:visitor_id',(req,res)=>{
     
     const visitor= viewVisitor();
 
