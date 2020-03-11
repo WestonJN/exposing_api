@@ -13,10 +13,10 @@ describe("Testing endpoints",() =>{
 		const res = await axios.post('http://localhost:5000/add-visitor', visitor);
 
 		objVisitor = res.data.visitor;
-		visitor_id = objVisitor.id;
+		// visitor_id = objVisitor.id;
 
 		expect(res.data.status).toBe('Is Okay');
-		expect(objVisitor.id).toEqual(visitor_id);
+		// expect(objVisitor.id).toEqual(visitor_id);
 		expect(objVisitor.name).toEqual(visitor.name);
 		expect(objVisitor.age).toEqual(visitor.age);
 		expect(new Date(objVisitor.date)).toEqual(new Date(visitor.date));
