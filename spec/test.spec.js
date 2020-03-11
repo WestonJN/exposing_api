@@ -10,7 +10,7 @@ describe("Testing endpoints",() =>{
         comments: 'No comment'
     }
     it('Should add new visitor', async () => {
-		const res = await axios.post('http://127.0.0.1:5000/add-visitor', visitor);
+		const res = await axios.post('http://localhost:5000/add-visitor', visitor);
 
 		objVisitor = res.data.visitor;
 		visitor_id = objVisitor.id;

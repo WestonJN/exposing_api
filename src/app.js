@@ -14,9 +14,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+createTable();
+
 app.post("/add-visitor",(req,res) => {
 
-    createTable();
+    
     //Our Input data
     let vname=req.body.vname;
     let aname=req.body.aname;
@@ -31,7 +33,7 @@ app.post("/add-visitor",(req,res) => {
         status:"Is Okay"
     });
 });
-app.get('/view-visitor/:visitor_id',(req,res)=>{
+app.get('/view-visitor:visitor_id',(req,res)=>{
     
     const visitor= viewVisitor();
 
@@ -47,7 +49,7 @@ app.get('/view-all-visitor',(req,res)=>{
         status: 'Is Okay'
     })
 })
-app.delete('/delete-visitor/:visitor_id', (req,res,)=>{
+app.delete('/delete-visitor:visitor_id', (req,res,)=>{
     
     const visitor_id =req.params.visitor_id;
 
@@ -68,7 +70,7 @@ app.delete('/delete-all-visitors', (req,res) =>{
     });
 });
 
-app.put('/update-visitor/:visitor_id',(req,res)=>{
+app.put('/update-visitor:visitor_id',(req,res)=>{
     let vname=req.body.vname;
     let aname=req.body.aname;
     let age=req.body.age;
